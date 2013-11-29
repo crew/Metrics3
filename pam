@@ -1,0 +1,3 @@
+# The Pam line that executes the metrics script.
+# To enable logging add: log=/tmp/log
+session optional  pam_exec.so debug  /opt/metrics3/metrics.sh
