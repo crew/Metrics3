@@ -16,18 +16,13 @@
 ####
 
 . config
-# #######################
-# # Config File Example #
-# #######################
-#
-# export URL="http://some.server.com:port"
-# export INDEX="/metrics/metrics"
 
 DATE=`date +%Y-%m-%dT%T`
 HOSTNAME=`hostname`
 HASH=`echo $PAM_USER| md5sum |cut -d' ' -f1`
 COUNT=`who |wc -l`
 DATA="{ \"hostname\":\"$HOSTNAME\", \"@timestamp\":\"$DATE\", \"user_hash\":\"$HASH\", \"state\":\"$PAM_TYPE\", \"user_count\":$COUNT }"
+
 # host is the machine logged in to.
 # @timestamp is the field kibana looks for to graph the data. (x axis)
 # hash is just a way to tell if someone logged in to the same box multiple times. Currently not used.
